@@ -1,0 +1,51 @@
+
+.header{
+  margin: 0px!important;
+  height: 50px;
+  background-color: #FFF159;;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search_bar{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+.meli_logo{
+  width: auto;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.search_bar input{
+  width: 80%;
+  padding: 5px;
+}
+
+.search_icon{
+  height: 30px;
+  width: 30px;
+  background-color: #eeeeee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_img{
+  max-width: 15px;
+  max-height: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.container{
+  min-height: 100vh;
+  background-color: gainsboro;
+  padding-top: 15px;
+}

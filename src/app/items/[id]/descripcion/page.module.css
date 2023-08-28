@@ -1,0 +1,14 @@
+.container{
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.header{
+  display: flex;
+}
+.title{
+  width: 40%;
+  margin: 0 auto;
+}

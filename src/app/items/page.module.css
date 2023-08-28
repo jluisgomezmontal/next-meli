@@ -1,0 +1,48 @@
+.container{
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.categoria{
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+.card{
+  height: 250px;
+  display: flex;
+  cursor: pointer;
+}
+
+.img{
+  padding: 20px;
+  width: 200px;
+  height: auto;
+}
+
+.info_producto{
+  height: 100%;
+  width: 60%;
+  padding: 20px;
+  margin-top: 25px;
+}
+.price{
+  font-size: 35px;
+  margin: 0;
+}
+.free_shipping{
+  margin-left: 10px;
+}
+.title{
+  margin: 25px 0;
+  font-size: 25px;
+}
+.city{
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  color: gray;
+  justify-content: center;
+}
