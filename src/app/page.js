@@ -26,10 +26,9 @@ export default function Home({ children, params }) {
           <Link href="/">
             <Image
               src={MeliLogo}
-              width={50}
-              height={50}
               alt="logo de mercado libre"
               className={styles.meli_logo}
+              priority
             />
           </Link>
           <input

@@ -17,8 +17,8 @@ const Producto = ({ producto }) => {
         <Image
           className={styles.img}
           src={producto.items.picture}
-          width={250}
-          height={250}
+          width={200}
+          height={200}
           alt="imagen de mercado libre"
         />
         <div className={styles.info_producto}>

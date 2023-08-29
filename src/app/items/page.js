@@ -19,7 +19,6 @@ const Page = () => {
       const result = await response.json();
       setProductos(result.splice(0, 4));
       setCat(result.splice(0, 1));
-      console.log(cat);
     };
     getProducts();
   }, [search]);
@@ -28,15 +27,13 @@ const Page = () => {
     <Home>
       <p className={styles.categoria}>
         Categoria:
-        {cat.map((c) => (
-          <>
-            <span> {c.categories}</span>
-          </>
+        {cat.map((c, id) => (
+          <span key={id}> {c.categories}</span>
         ))}
       </p>
       <div className={styles.container}>
-        {productos.map((pro) => (
-          <Producto producto={pro} />
+        {productos.map((pro, id) => (
+          <Producto key={id} producto={pro} cat={cat} />
         ))}
       </div>
     </Home>
