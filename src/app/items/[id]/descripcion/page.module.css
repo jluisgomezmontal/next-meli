@@ -57,6 +57,21 @@
   color: black;
 }
 
+.modal{
+  height: 40vh;
+  width: 95vw;
+  border: 1px solid #2968C8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+}
+
 @media only screen and (min-width: 900px) {
   .header{
     display: flex;
@@ -85,9 +100,14 @@
   .descripcion{
     width: 70%;
   }
+  .modal{
+    height: 40vh;
+    width: 40vw;
+  }
 }
 
 
 .title{
   margin-top: 5px;
+  margin-bottom: 15px;
 }

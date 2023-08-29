@@ -51,6 +51,7 @@
   justify-content: center;
   margin: 0 auto;
 }
+
 @media only screen and (min-width: 900px) {
   .categoria{
     width: 80%;
@@ -91,5 +92,3 @@
 
   }
 }
-
-
