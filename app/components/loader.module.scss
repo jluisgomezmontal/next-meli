@@ -1,4 +1,4 @@
-.loading{
+.loader{
 	position: absolute;
 	top: 70px;
 	width:100%;
@@ -6,16 +6,16 @@
 	background: #4189E6;
 	border-left:0px solid #F8ECF1;
 	box-shadow: 0 0 0 1px #F8ECF1;
-	animation:loading infinite .8s linear;
+	animation:loader infinite .8s linear;
 }
-@keyframes loading{
+@keyframes loader{
 	100%{
 		border-left:100vw solid #5796ea;
 	}
 }
 
 @media only screen and (min-width: 900px) {
-	.loading{
+	.loader{
 		top: 50px;
 	}
 }

@@ -2,24 +2,20 @@
 // Importamos módulos y componentes necesarios
 import Image from "next/image";
 import styles from "./page.module.css";
-import MeliLogo from "../../public/Assets/Logo_ML@2x.png.png";
-import SearchImg from "../../public/Assets/ic_Search@2x.png.png";
+import MeliLogo from "../public/Assets/Logo_ML@2x.png.png";
+import SearchImg from "../public/Assets/ic_Search@2x.png.png";
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 import "./globals.css";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 
 // Componente Home que representa la página principal
-export default function Home({ children, params }) {
+export default function Home({ children }) {
   // Obtenemos los parámetros de búsqueda de la URL
   const searchParams = useSearchParams();
   const search = searchParams.get("search");
-
-  // Obtenemos el enrutador de Next.js
-  const router = useRouter();
-
-  // Estado para manejar el valor del input de búsqueda
   const [input, setInput] = useState(search || "");
+  const router = useRouter();
 
   // Función para manejar el envío del formulario
   const handleSubmit = (e) => {
@@ -38,7 +34,6 @@ export default function Home({ children, params }) {
               src={MeliLogo}
               alt="logo de mercado libre"
               className={styles.meli_logo}
-              priority
             />
           </Link>
           {/* Input de búsqueda */}

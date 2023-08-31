@@ -1,11 +1,10 @@
 // Importamos los módulos necesarios
 import Image from "next/image";
-import styles from "./page.module.css";
 // Importamos la imagen de envío
-import carImg from "../../../public/Assets/ic_shipping@2x.png.png";
+import carImg from "../../public/Assets/ic_shipping@2x.png.png";
 
 // Definimos el componente Precio
-export const Precio = ({ amount, car, className }) => {
+export const Precio = ({ amount, car, styles }) => {
   // Extraemos el precio del objeto props
   const precio = amount;
   // Extraemos los últimos tres dígitos del precio como decimales
@@ -15,7 +14,7 @@ export const Precio = ({ amount, car, className }) => {
 
   return (
     // Renderizamos el precio y la etiqueta de envío si corresponde
-    <p className={className}>
+    <p className={styles.price}>
       {/* Mostramos el precio formateado */}$
       {precio?.toString().length > 3 ? unidad + "." + decimos : precio}
       {/* Mostramos la etiqueta de envío gratis si es necesario */}
