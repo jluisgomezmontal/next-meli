@@ -64,10 +64,9 @@
   }
   .img{
     padding: 30px 20px;
-    width: 20%;
-    height: 80%;
     margin: auto 0;
-    max-width: 100%;
+    max-width: 200px;
+    max-height: 200px;
   }
 
   .info_producto{

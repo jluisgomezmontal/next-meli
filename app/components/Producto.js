@@ -1,15 +1,13 @@
+"use client";
 // Importamos los módulos y componentes necesarios
-import React from "react";
 import Image from "next/image";
-import styles from "./page.module.css";
-import { useRouter, useSearchParams } from "next/navigation";
 import { Precio } from "./Precio";
+import { useRouter } from "next/navigation";
 
 // Definimos el componente Producto
-const Producto = ({ producto }) => {
+const Producto = ({ producto, styles }) => {
   // Obtenemos el enrutador de Next.js
   const router = useRouter();
-
   // Función para manejar el clic en el producto
   const handleClick = (e) => {
     e.preventDefault();
@@ -32,7 +30,7 @@ const Producto = ({ producto }) => {
         <div className={styles.info_producto}>
           {/* Componente Precio */}
           <Precio
-            className={styles.price}
+            styles={styles}
             amount={producto.items?.price.amount}
             car={producto.items?.free_shipping}
           />
