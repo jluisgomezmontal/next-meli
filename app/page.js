@@ -1,5 +1,5 @@
 "use client";
-// Importamos módulos y componentes necesarios
+// Importamos los módulos y componentes necesarios
 import Image from "next/image";
 import styles from "./page.module.css";
 import MeliLogo from "../public/Assets/Logo_ML@2x.png.png";
@@ -9,34 +9,37 @@ import "./globals.css";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 
-// Componente Home que representa la página principal
 export default function Home({ children }) {
-  // Obtenemos los parámetros de búsqueda de la URL
+  // Obtener los parámetros de búsqueda de la URL
   const searchParams = useSearchParams();
   const search = searchParams.get("search");
+
+  // Estado para almacenar el valor del input de búsqueda
   const [input, setInput] = useState(search || "");
+
+  // Obtener el objeto router para navegar a otras páginas
   const router = useRouter();
 
-  // Función para manejar el envío del formulario
+  // Función para manejar el envío del formulario de búsqueda
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Redirigir a la página de items con el parámetro de búsqueda
     router.push(`/items?search=${input}`);
   };
 
   return (
     <>
-      {/* Encabezado de la página */}
       <div className={styles.header}>
+        {/* Enlace al inicio */}
+        <Link href="/">
+          <Image
+            src={MeliLogo}
+            alt="logo de mercado libre"
+            className={styles.meli_logo}
+          />
+        </Link>
+        {/* Formulario de búsqueda */}
         <form onSubmit={handleSubmit} className={styles.search_bar}>
-          {/* Enlace al inicio */}
-          <Link href="/">
-            <Image
-              src={MeliLogo}
-              alt="logo de mercado libre"
-              className={styles.meli_logo}
-            />
-          </Link>
-          {/* Input de búsqueda */}
           <input
             onChange={(e) => setInput(e.target.value)}
             placeholder="Nunca dejes de buscar"
@@ -44,8 +47,8 @@ export default function Home({ children }) {
             value={input}
             autoFocus
           />
-          {/* Icono de búsqueda */}
           <div className={styles.search_icon}>
+            {/* Icono de búsqueda que ejecuta la función handleSubmit */}
             <Image
               className={styles.search_img}
               src={SearchImg}
@@ -55,7 +58,7 @@ export default function Home({ children }) {
           </div>
         </form>
       </div>
-      {/* Contenedor principal */}
+      {/* Contenedor de los elementos hijos */}
       <div className={styles.container}>{children}</div>
     </>
   );

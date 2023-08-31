@@ -1,20 +1,27 @@
+// Importamos los módulos y componentes necesarios
 import { Precio } from "@/app/components/Precio";
 import styles from "./page.module.css";
 import Image from "next/image";
 import Home from "@/app/page";
 import { getDescripcion } from "@/app/utils/getDescripcion";
 
+// Definición del componente asíncrono
 const IdProducto = async ({ params }) => {
+  // Obtener la descripción del producto usando la función getDescripcion
   const producto = await getDescripcion(params.idProducto);
+
   return (
     <Home>
+      {/* Establecer el título de la página con el título del producto */}
       <title>{producto.item.title}</title>
 
+      {/* Mostrar la categoría del producto */}
       <p className={styles.categoria}>Categoria: {producto.item.categoria}</p>
+
+      {/* Contenedor principal */}
       <div className={styles.container}>
-        {/* Encabezado de la página */}
         <div className={styles.header}>
-          {/* Imagen del producto */}
+          {/* Mostrar la imagen del producto */}
           <Image
             src={producto.item.picture}
             className={styles.img}
@@ -23,23 +30,22 @@ const IdProducto = async ({ params }) => {
             alt="imagen de mercado libre"
             priority
           />
-          {/* Información del producto */}
           <div className={styles.info}>
-            {/* Condición y cantidad vendida del producto */}
+            {/* Mostrar condición del producto y cantidad vendida */}
             <p className={styles.condicion}>
               {producto.item.condition === "new" ? "Nuevo" : "Usado"}
               <span> - {producto.item.sold_quantity} Vendidos</span>
             </p>
-            {/* Título del producto */}
+            {/* Mostrar título del producto */}
             <h2 className={styles.title}>{producto.item.title}</h2>
-            {/* Componente Precio */}
+            {/* Mostrar precio usando el componente Precio */}
             <Precio styles={styles} amount={producto.item.price.amount} />
-            {/* Botón de comprar */}
+            {/* Botón de compra */}
             <button className={styles.button}>Comprar</button>
           </div>
         </div>
-        {/* Descripción del producto */}
         <div className={styles.descripcion}>
+          {/* Mostrar la descripción del producto */}
           <h3 className={styles.des_title}>Descripcion del Producto</h3>
           <p>{producto.item.description}</p>
         </div>
