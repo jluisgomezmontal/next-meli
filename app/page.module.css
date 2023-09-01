@@ -1,16 +1,17 @@
 .header{
-  margin: 0px;
   height: 70px;
   background-color: #FFF159;;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .search_bar{
   width: 90%;
   display: flex;
   align-items: center;
-  justify-content: center;
   height: 30px;
 }
 
@@ -18,11 +19,10 @@
 .meli_logo{
   width: auto;
   height: 30px;
-  margin-right: 20px;
 }
 
 .search_bar input{
-  width: 80%;
+  width: 100%;
   padding: 5px;
 }
 
@@ -55,5 +55,10 @@
   }
   .search_bar{
     width: 80%;
+  }
+  .header{
+    gap: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 }
